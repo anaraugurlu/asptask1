@@ -1,0 +1,29 @@
+﻿@model IEnumerable<asptask1.Entities.FastFood>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FastFood</title>
+</head>
+<body>
+    @foreach (var item in Model)
+    {
+        <h3>name:</h3>
+        <h1>@item.Name</h1>
+        <h3>id:</h3>
+
+        <h1>@item.Id</h1>
+        <h3>price:</h3>
+
+        <h1>@item.Price</h1>
+
+        <br>
+    }
+</body>
+</html>
