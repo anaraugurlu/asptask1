@@ -1,4 +1,5 @@
 ﻿using asptask1.Entities;
+using asptask1.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,44 +10,48 @@ namespace asptask1.Controllers
 {
     public class HomeController : Controller
     {
-       public IActionResult Index()
+        List<Drink> drinks = new List<Drink>
+            {
+               
+                new Drink {Id=2,  Name="Fanta", Price= 11},
+                new Drink {Id=3,  Name="Juice", Price= 12},
+                new Drink {Id=4,   Name="Coca-Cola", Price= 13},
+               
+            };
+        List<HotMeal> hotmeals = new List<HotMeal>
+            {
+                new HotMeal {Id=1, Name="Minestrone Soup", Price= 20},
+                new HotMeal {Id=2,  Name="Seasoned Rice", Price= 19},
+                new HotMeal {Id=3,  Name="Apple Crisp", Price= 22},
+               
+            };
+        List<FastFood> fastfoods = new List<FastFood>
+            {
+                new FastFood {Id=1,  Name="Hamburger", Price= 15},
+                new FastFood {Id=3,   Name="Pizza", Price= 18},
+                new FastFood {Id=3,   Name="Burrito", Price= 18},
+               
+            };
+        public IActionResult Index()
         {
+
+            //MealListViewModel model = new MealListViewModel { Drinks = drinks, FastFoods = fastfoods, HotMeals = hotmeals };
+
             return View();
         }
-
         public IActionResult Drink()
         {
-            List<Drink> drinks = new List<Drink>
-            {
-                new Drink {Id=1,Name="cola",Price=5},
-                new Drink {Id=2,Name="fanta",Price=3},
-                new Drink {Id=3,Name="pepsi",Price=2}
-            };
-           
-            return View(drinks );
+            return View(drinks);
         }
         public IActionResult HotMeal()
         {
-            List<HotMeal> hotmeal = new List<HotMeal>
-            {
-                new HotMeal {Id=1,Name="dolma",Price=25},
-                new HotMeal {Id=2,Name="kabab",Price=30},
-                new HotMeal {Id=3,Name="levengi",Price=20}
-            };
-
-            return View(hotmeal);
+            return View(hotmeals);
         }
         public IActionResult FastFood()
         {
-            List<FastFood> fastfoods = new List<FastFood>
-            {
-                new FastFood {Id=1,Name="burger",Price=25},
-                new FastFood {Id=2,Name="pizza",Price=30},
-                new FastFood {Id=3,Name="lahmacun",Price=20}
-            };
-
             return View(fastfoods);
         }
 
     }
 }
+

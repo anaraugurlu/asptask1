@@ -10,5 +10,6 @@ namespace asptask1.Entities
         public int Id { get; set; }
         public int Price { get; set; }
         public string Name { get; set; }
+
     }
 }
