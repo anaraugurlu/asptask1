@@ -31,26 +31,27 @@ namespace asptask1.Controllers
                 new FastFood {Id=3,   Name="Pizza", Price= 18},
                 new FastFood {Id=3,   Name="Burrito", Price= 18},
                
-            };
-        public IActionResult Index()
-        {
-
-            //MealListViewModel model = new MealListViewModel { Drinks = drinks, FastFoods = fastfoods, HotMeals = hotmeals };
-
-            return View();
-        }
+            }; 
         public IActionResult Drink()
         {
             return View(drinks);
-        }
-        public IActionResult HotMeal()
-        {
-            return View(hotmeals);
         }
         public IActionResult FastFood()
         {
             return View(fastfoods);
         }
+        public IActionResult Index()
+        {
+
+
+            return View();
+        }
+       
+        public IActionResult HotMeal()
+        {
+            return View(hotmeals);
+        }
+       
 
     }
 }
